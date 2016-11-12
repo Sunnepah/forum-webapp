@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <base href="/">
+    <title>::Forum App::</title>
+    <link href="favicon.png" rel="shortcut icon">
+    <link href="//fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Open+Sans:400,300,600" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.jsdelivr.net/animatecss/3.2.0/animate.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="navbar navbar-default navbar-static-top">
+        <ul class="nav navbar-nav pull-left">
+            <li><a href="#">Posts: 0</a></li>
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+            <li><a href="#">Views: 0</a></li>
+        </ul>
+    </div>
+
+    {% if isLoggedIn == false %}
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form method="POST" action="#" accept-charset="UTF-8" class="form-horizontal" role="form">
+                <input name="_token" type="hidden" value="jfsakjfaslfn">
+                <div class="form-group">
+                    <label for="username" class="col-md-1">Username</label>
+                    <div class="col-md-4">
+                        <input class="form-control" name="username" id="username" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="col-md-1">Password</label>
+                    <div class="col-md-4">
+                        <input class="form-control" name="password" type="password" id="password" required>
+                    </div>
+                    <div class="col-md-offset-4">
+                        <input class="btn btn-primary" style="margin-right:15px" type="submit" value="Login">
+                    </div>
+                </div>
+            </form>
+        </div><!-- panel body -->
+    </div><!-- panel -->
+    {% endif %}
+
+    {% if isLoggedIn == true %}
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-6">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <input class="form-control" name="image_title" id="image_title"
+                                       placeholder="Image tile (optional)">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-5">
+                                <input class="form-control" type="file" name="image_file" id="image_file" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <input class="btn btn-primary" type="submit" name="upload_image" id="upload_image"
+                                       value="Upload image">
+                            </div>
+                            <div class="col-md-9">
+                                <input class="btn btn-primary" style="margin-left:310px" type="button" value="Logout">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if posts | length > 0 %}
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        {% for post in posts %}
+                        <p>
+                            {{ post.author}}: {{ post.title }}
+                        </p>
+                        <br>
+                        <p>
+                            {{ post.image_url }}
+                        </p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>
+</body>
+</html>
