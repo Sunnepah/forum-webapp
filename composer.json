@@ -5,7 +5,8 @@
 
   "require": {
     "sunnepah/lustre": "dev-master",
-    "twig/twig": "~1.0"
+    "twig/twig": "~1.0",
+    "aws/aws-sdk-php": "^3.19"
   },
   "repositories": [
     {
