@@ -8,6 +8,7 @@
 
 require '../vendor/autoload.php';
 
+session_start();
 
 $app = \Lustre\Application::singleton();
 
