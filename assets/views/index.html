@@ -25,7 +25,7 @@
             <li><a href="#">Views: 0</a></li>
         </ul>
     </div>
-
+    {% if isLoggedIn == true %}<ul><a href="">Export</a></ul>{% endif %}
     {% if isLoggedIn == false %}
     <div class="panel panel-default">
         <div class="panel-body">
