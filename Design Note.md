@@ -9,7 +9,6 @@
     &nbsp;&nbsp;&nbsp;&nbsp;|---
     *   |---Libraries (holds business logic)
     &nbsp;&nbsp;&nbsp;&nbsp;|---
-* src (holds core of the application registry)
 * tests
     &nbsp;&nbsp;&nbsp;&nbsp;|---
 
