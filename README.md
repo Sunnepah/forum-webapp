@@ -14,8 +14,11 @@ $ `create MYSQL database 'forum_db' in your machine and import forum_db20161112.
 $ `Change your database credentials in 'application/Config/DBConfig.php'`
 
 $ `Configure your Aws S3 credentials in 'application/Config/ServiceConfig.php'`
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- S3_BUCKET (S3 Bucket name)
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- AccessKey_ID (AWS developer ID)
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- SecretAccess_Key (AWS developer Key)
 
 $ `php -S 0.0.0.0:8080 -t web/`
